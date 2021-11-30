@@ -1,0 +1,38 @@
+<html lang="eng">
+
+<head>
+	<meta charset="utf-8"/>
+	<title>pimanrules</title>
+	<link rel="stylesheet" href="style.css">
+	<script>
+		let t = 0;
+		window.setInterval("spin()", 33);
+
+		function spin() {
+			t += 2;
+			let transformStyle = `rotate(${t}deg) scale(${Math.sin(t / 29) + 1})`;
+			document.getElementById('spinner').style.webkitTransform = transformStyle;
+			document.getElementById('spinner').style.mozTransform = transformStyle;
+			document.getElementById('spinner').style.transform = transformStyle;
+			let red = Math.floor((Math.sin(t / 100) + 1) * 127);
+			let green = Math.floor((Math.cos(2.32 * t / 100) + 1) * 127);
+			let blue = Math.floor((Math.cos(-5.79 * t / 100) + 1) * 127);
+			document.getElementById('body').style.backgroundColor = `rgb(${red},${green},${blue})`;
+			document.getElementById('spinner').style.color = `rgb(${255 - red},${255 - green},${255 - blue})`;
+		}
+
+		function start() {
+			document.getElementById("bg-music").play()
+			document.getElementById("click-through").remove()
+		}
+
+	</script>
+</head>
+<body id=body>
+	<div id="click-through">
+		<span id="play-button" onclick="start()">▶</span>
+	</div>
+	<div id="spinner">pimanrules</div>
+	<audio id="bg-music" src="polka.mp3" loop="loop"></audio>
+</body>
+</html>

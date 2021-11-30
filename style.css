@@ -1,0 +1,33 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+#spinner {
+    position: fixed;
+    top: 50%;
+    width: 100%;
+    text-align: center;
+    font-size: 350%;
+    font-family: sans-serif;
+}
+
+#click-through {
+    display: flex;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: black;
+    z-index: 10;
+    font-size: 25vh;
+    color: lime;
+    justify-content: center;
+    align-items: center;
+}
+
+#play-button:hover {
+    cursor: pointer;
+    color: greenyellow;
+}
