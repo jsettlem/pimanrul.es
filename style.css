@@ -91,7 +91,7 @@ audio {
     padding-bottom: 2vw;
 }
 
-@-moz-document url-prefix() {
+@supports ((not (mask-image: url('svg/twitter.svg'))) and (not (-webkit-mask-image: url('svg/twitter.svg')))) or (not (backdrop-filter: invert(100%))) {
     .social-icon {
         background-color: white;
         opacity: 60%;
