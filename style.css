@@ -51,15 +51,23 @@ audio {
     width: 100vw;
     bottom: 10vh;
     justify-content: center;
-    align-items: center;
+    align-items: baseline;
     z-index: 20;
+}
+
+.social-link {
+    /* the arcana is the means by which all is revealed */
+    margin: 1vw;
 }
 
 .social-icon {
     width: 10vw;
     height: 10vw;
-    margin: 1vw;
     backdrop-filter: invert(100%) brightness(60%);
+    transition-property: padding-bottom;
+    transition-duration: 0.3s;
+    mask-repeat: no-repeat;
+    -webkit-mask-repeat: no-repeat;
 }
 
 .twitter-icon {
@@ -80,6 +88,7 @@ audio {
 
 .social-icon:hover {
     backdrop-filter: invert(100%) brightness(90%);
+    padding-bottom: 2vw;
 }
 
 @-moz-document url-prefix() {
