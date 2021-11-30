@@ -31,3 +31,65 @@
     cursor: pointer;
     color: greenyellow;
 }
+
+audio {
+    width: 100vw;
+    opacity: 50%;
+    filter: invert(100%);
+    position: fixed;
+    bottom: 0;
+}
+
+#credits {
+    opacity: 25%;
+    font-family: sans-serif;
+}
+
+.socials {
+    display: flex;
+    position: fixed;
+    width: 100vw;
+    bottom: 10vh;
+    justify-content: center;
+    align-items: center;
+    z-index: 20;
+}
+
+.social-icon {
+    width: 10vw;
+    height: 10vw;
+    margin: 1vw;
+    backdrop-filter: invert(100%) brightness(60%);
+}
+
+.twitter-icon {
+    mask-image: url('svg/twitter.svg');
+    -webkit-mask-image: url('svg/twitter.svg');
+}
+
+.github-icon {
+    mask-image: url('svg/github.svg');
+    -webkit-mask-image: url('svg/github.svg');
+}
+
+.youtube-icon {
+    mask-image: url('svg/youtube.svg');
+    -webkit-mask-image: url('svg/youtube.svg');
+}
+
+
+.social-icon:hover {
+    backdrop-filter: invert(100%) brightness(90%);
+}
+
+@-moz-document url-prefix() {
+    .social-icon {
+        background-color: white;
+        opacity: 60%;
+    }
+
+    .social-icon:hover {
+        opacity: 90%;
+    }
+
+}

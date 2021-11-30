@@ -6,11 +6,16 @@
 	<link rel="stylesheet" href="style.css">
 	<script>
 		let t = 0;
-		window.setInterval("spin()", 33);
+		let pi = 3.14159;
 
 		function spin() {
 			t += 2;
-			let transformStyle = `rotate(${t}deg) scale(${Math.sin(t / 29) + 1})`;
+			let time_scale = 29;
+			let second_scale = 3;
+			let first_wave = (Math.sin(t / time_scale) + 1) ;
+			let second_wave = Math.sin(t / (time_scale * second_scale * pi)) * 0.75 + 1.5;
+			let scale = first_wave * second_wave
+			let transformStyle = `rotate(${t}deg) scale(${scale})`;
 			document.getElementById('spinner').style.webkitTransform = transformStyle;
 			document.getElementById('spinner').style.mozTransform = transformStyle;
 			document.getElementById('spinner').style.transform = transformStyle;
@@ -22,17 +27,27 @@
 		}
 
 		function start() {
+			document.getElementById("bg-music").volume = 0.5
 			document.getElementById("bg-music").play()
 			document.getElementById("click-through").remove()
+			window.setInterval("spin()", 33);
 		}
 
 	</script>
 </head>
 <body id=body>
-	<div id="click-through">
-		<span id="play-button" onclick="start()">▶</span>
-	</div>
-	<div id="spinner">pimanrules</div>
-	<audio id="bg-music" src="polka.mp3" loop="loop"></audio>
+<div id="click-through">
+	<span id="play-button" onclick="start()">▶</span>
+</div>
+<div id="spinner">pimanrules</div>
+<audio id="bg-music" src="polka.mp3" loop="loop"  controls="controls"></audio>
+<span id="credits">Pixel Peeker Polka - faster Kevin MacLeod (incompetech.com)
+Licensed under Creative Commons: By Attribution 3.0 License
+http://creativecommons.org/licenses/by/3.0/</span>
+<div class="socials">
+	<a href="https://youtube.com/pimanrules"><div class="youtube-icon social-icon"></div></a>
+	<a href="https://twitter.com/pimanrules"><div class="twitter-icon social-icon"></div></a>
+	<a href="https://github.com/jsettlem"><div class="github-icon social-icon"></div></a>
+</div>
 </body>
 </html>
