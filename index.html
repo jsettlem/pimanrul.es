@@ -10,7 +10,7 @@
 		let pi = 3.14159;
 
 		function spin() {
-			t += 2;
+			t += 6;
 			let time_scale = 29;
 			let second_scale = 3;
 			let first_wave = (Math.sin(t / time_scale) + 1) ;
@@ -31,7 +31,7 @@
 			document.getElementById("bg-music").volume = 0.5
 			document.getElementById("bg-music").play()
 			document.getElementById("click-through").remove()
-			window.setInterval("spin()", 33);
+			window.setInterval("spin()", 100);
 		}
 
 	</script>
